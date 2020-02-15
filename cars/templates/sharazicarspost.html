@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "head.html" %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{{posttitle.title}}{% endblock %}</title>
+
+	<link rel="icon" href="{%static 'socialicon/web-logo.png' %}">
+	{% block meta %}
+    <meta property="og:image" content="/media/{posttitle.mainimage}}" />
+    <meta name="description" content="{{posttitle.postdesc}} ">
+    <meta name="keywords" content="{{posttitle.tags}}">{% endblock %}
+    <style>{% block css %}
+    .postpage{
+    margin-top:30px;
+    margin-left:50px;
+    background-color:#ffffff;
+    min-height: xxx;
+	overflow: hidden;
+
+    }
+    .posthalf{
+    width:870px;
+    float:left;
+    }
+        .sharer{
+        background-color:#ffffff;
+        width:70px;
+        float:left;
+        display:block;
+        }
+        h1{
+        font-family:Lucida Console;
+        }
+
+        .fullpost{
+        float:left;
+        display:block;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+        width:800px;
+        }
+        body{
+        font-family:Lota;
+        font-size:20px;
+        }
+        .posttitle{
+
+        margin-left:100px;
+        width:80%;
+        padding-left:5px;
+        padding-right:5px;
+        font-size:20px;
+        background-color:white;
+        min-height: xxx;
+	    overflow: hidden;
+        }
+        .postpicture{
+        padding-left:5px;
+        padding-right:5px;
+        }
+        .postpicture img{
+        height:500px;
+        width:780px;
+        }
+        .postdesc{
+        padding-left:5px;
+        padding-right:5px;
+        }
+        .relatedpost{
+        background-color:#ffffff;
+        width:800px;
+        font-size:30px;
+        margin-left:70px;
+        margin-top:20px;
+        display:block;
+        float:left;
+        min-height:xxx;
+	    overflow: hidden;
+        }
+        .relatedpost1{
+        font-size:15px;
+        width:230px;
+        display:block;
+        background-color:#ffffff;
+        float:left;
+        margin-right:10px;
+        margin-left:20px;
+
+        }
+
+        .sidebar{
+        margin-left:10px;
+        background-color:#ffffff;
+        width:300px;
+        float:left;
+        }
+        .subscriber{
+        width:300px;
+        text-align:center;
+        }
+        input[type=text] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 300px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            background-color:black;
+            color:white;
+            font-size:20px;
+        }
+        input[type=submit]:focus {
+            width: 300px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border-radius:15px;
+            background-color:white;
+            color:black;
+            font-size:20px;
+        }
+        input[type=Subscribe] {
+            width: 300px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            background-color:black;
+            color:white;
+            font-size:20px;
+        }
+        input[type=Subscribe]:focus {
+            width: 300px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border-radius:15px;
+            background-color:white;
+            color:black;
+            font-size:20px;
+        }
+        .RecentNews{
+            width:300px;
+            background-color:black;
+            color:white;
+            font-size:30px;
+            text-align:center;
+            margin-top:10px;
+        }
+        .recentpost{
+        margin:5px;
+
+        max-height:70px;
+	    overflow: hidden;
+        padding:4px;
+        }
+        .recenttext{
+        margin:2px;
+        }
+        .recentpic{
+        float:left;
+        }
+        .ads{
+        width:300px;
+        height:200px;
+
+        color:white;
+        padding-top:10px;
+        }
+        .sidecrop{
+        width:100px;
+        height:100px;
+        object-fit: cover;
+        }
+        @media (max-width: 992px)
+          {
+          .posttitle{
+          margin:0px;
+          margin-top:100px;
+          width:95%;
+          font-size:10px;
+          }
+          .sharer{
+          width:95%;
+          }
+          .postpage{
+          margin:0px;
+          }
+          .posthalf{
+          margin:0px;
+          width:99%;
+          }
+          .postpicture{
+          width:95%;
+          }
+          .fullpost{
+          width:99%;
+          }
+          .postpicture img{
+          width:95%;
+          height:400px;
+          }
+
+          .relatedpost{
+          width:99%;
+          margin:0px;
+          min-height: xxx;
+	      overflow: hidden;
+          }
+          .relatedpost1{
+          width:95%;
+
+          }
+          .sidebar{
+        width:95%;
+        }
+        .subscriber{
+        width:95%;
+        }
+        input[type=text] {
+            width:95%;
+        }
+        input[type=submit] {
+            width:95%;
+        }
+        input[type=submit]:focus {
+            width:95%;
+        }
+        input[type=Subscribe] {
+            width:95%;
+        }
+        input[type=Subscribe]:focus {
+           width:95%;
+        }
+        .RecentNews{
+            width:95%;
+        }
+        .recentpost{
+       width:95%;
+        }
+        .recenttext{
+        margin:0px;
+
+        }
+        .recentpic{
+
+        }
+        .ads{
+        width:95%;
+
+        }
+
+
+                }
+        {% endblock %}
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="posttitle">
+     <h1>{{posttitle.title}}</h1>
+    </div>
+<div class="postpage">
+    <div class="posthalf">
+<div class="sharer">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://sharazicars.pk/post/{{posttitle.slug}}"><img src="{%static 'socialicon/facebook.svg' %}" height="50px" width="50px"/></a>
+    <img src="{%static 'socialicon/whatsapp.svg' %}" height="50px" width="50px"/>
+    <img src="{%static 'socialicon/google.svg' %}" height="50px" width="50px"/>
+    <img src="{%static 'socialicon/in.svg' %}" height="50px" width="50px"/>
+
+</div>
+<div class="fullpost">
+</br>
+    <div class="dates"><b>Publish Date: </b>{{posttitle.pub_date}}  &nbsp;&nbsp;&nbsp;{{posttitle.postviews}} views</br></div></br>
+    <div class="postpicture">
+        <img src="/media/{{posttitle.mainimage}}" />
+    </div>
+    <div class="postdesc">
+        <p>{{posttitle.postdesc}}</p>
+        <b>Related News :</b> <a href="{{posttitle.relatedlink}}">{{posttitle.relatedtext}}</a></br>
+        {% for i in dating %}
+        <p>{{ i|safe }}</p>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="relatedpost">
+    </br>
+    <div><b>&nbsp;You May Also Like These News!</b></div>
+    {% for i in relateddata %}
+    <div class="relatedpost1">
+        <a href="{{i.slug}}">
+    <div><img src="/media/{{i.mainimage}}" height="180px" width="230px"/></div>
+        {{i.title}}</a>
+    </div>
+    {% endfor %}
+
+</div>
+    </div>
+<div class="sidebar">
+    <div class="searchbar">
+        <form>
+            <input type="text" name="search" placeholder="Search Any News"></br>
+            <input type="submit" name="Search" Value="Search">
+        </form>
+
+    </div>
+    <div class="ads">
+        ad
+    </div>
+    <div class="subscriber">
+        <form>
+            <b>For Latest News Subscribe Our Newsletter !!!</b>
+            <input type="text" name="search" placeholder="Please Enter your Email"></br>
+            <input type="Submit" name="Subscribe" value="Subscribe">
+        </form>
+
+    </div>
+    <div class="RecentNews">
+        Recent News !
+
+    </div>
+    {% for i in sidedata %}
+
+
+    <div class="recentpost">
+        <a href="{{i.slug}}">
+            <div class="recentpic">
+    <img class="sidecrop"src="/media/{{i.mainimage}}" height="100px" width="100px"/></div>
+            <div class="recenttext">{{i.title}}</div></a>
+    </div>
+    {% endfor %}
+</div></div>
+{% endblock %}
+
+</body>
+</html>

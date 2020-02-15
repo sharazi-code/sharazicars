@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% extends "head.html" %}
+      {% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{car.carname}}{% endblock %}</title>
+    {% block meta %}
+    <meta property="og:image" content="/media/{{car.mainimage}}" />
+    <meta name="description" content="{{car.carintro}} ">
+    <meta name="keywords" content="{{car.cartags}}">{% endblock %}
+<style>{% block css %}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+.fullcar{
+	margin-left: 200px;
+	width: 900px;
+
+}
+.detailfeature{
+    float:none;
+    width:100%;
+	min-height: xxx;
+    overflow: hidden;
+}
+.carname{
+	font-family: Alegreya;
+	text-align: center;
+	width: 900px;
+	border-radius: 20px;
+	border-left: 6px solid red;
+	border-right: 6px solid red;
+    background-color: white;
+    font-size: 15px;
+}
+.sliderprice{
+	float: left;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 600px;
+
+  margin: auto;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.images{
+	width:500px;
+	height: 350px;
+	object-fit: cover;
+}
+.titleprice{
+	font-family: sans-serif;
+	margin-left: 550px;
+	margin-top: 50px;
+	height: 400px;
+}
+.details{
+	padding: 10px;
+	float: left;
+	width: 600px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 250px;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#pricered{
+	color: red;
+	font-size: 30px;
+}
+.picbelow{
+	width:1000px;
+	min-height:xxx;
+
+}
+.picbelow0{
+
+	float: left;
+	width: 100px;
+	height: 150px;
+	text-align: center;
+}
+.picbelow1{
+	margin-left: 50px;
+	float: left;
+	width: 100px;
+	height: 150px;
+	text-align: center;
+}
+.images1{
+	width:100px;
+	height: 100px;
+	object-fit: cover;
+
+}
+.reviewbelow{
+	padding-top: 30px;
+	margin-top: 100px;
+	background-color: green;
+	color: white;
+	width: 300px;
+	height: 90px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 10px;
+}
+/* On smaller screens, decrease text size */
+@media (max-width: 992px){
+  .prev, .next,.text {font-size: 11px}
+  .fullcar{
+	margin-top: 100px;
+	margin-left:0px;
+	width: 95%;
+}
+.carname{
+	width: 90%;
+	font-size: 10px;
+}
+.sliderprice{
+	float: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  margin: auto;
+
+}
+.images{
+	width:100%;
+	height: 200px;
+	object-fit: cover;
+}
+.titleprice{
+	font-family: sans-serif;
+	margin-left: 0px;
+	margin-top: 10px;
+	min-height:xxx;
+	text-align:center;
+}
+.details{
+	padding: 10px;
+	float: none;
+	width: 90%;
+}
+table {
+  width: 95%;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#pricered{
+	color: red;
+	font-size: 30px;
+	text-align:center;
+}
+.picbelow{
+    margin-top:-250px;
+	width:90%;
+	min-height:xxx;
+	display:block;
+
+}
+.picbelow0{
+    width:95%;
+	float: none;
+	width:90%;
+	min-height:xxx;
+}
+.picbelow1{
+	margin-left: 0px;
+	float: none;
+	width:90%;
+	min-height: xxx;
+}
+.images1{
+	width:90%;
+	height: 100px;
+	object-fit: cover;
+
+}
+.reviewbelow{
+	display:none;
+}
+}
+{% endblock %}
+</style>
+</head>
+<body>{% block body %}
+	<div class="fullcar"><div class="carname"><h1>{{car.title}}</h1></div>
+<div class="sliderprice">
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img class="images" src="/media/{{car.mainimage}}" >
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img class="images" src="/media/{{car.postimage}}">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img class="images" src="/media/{{car.postimage1}}" >
+
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+        {% load static %}
+<div class="titleprice"><h2>{{car.carname}} </h2></br>
+ <div id="pricered"> {{car.carprice}}<b>PKR</b></div>
+ <div class="reviewbelow">Write Your Review Below 👇</div>
+</div>
+ <div class="picbelow">
+ 	<div class="picbelow0">
+ 		<img class="images1" src="{%static 'engine copy.png' %}" >
+ 		<b>Engine</b></br>
+ 	{{car.engine}}cc
+ </div>
+ <div class="picbelow1">
+ 	<img class="images1" src="{%static 'mileage copy.png' %}" >
+ 	<b>Mileage</b></br>
+ 	{{car.mileage}} KM/L
+ </div>
+ <div class="picbelow1">
+ 	<img class="images1" src="{%static 'transmission.png' %}" >
+ 	<b>Transmission</b></br>
+ 	{{car.Transmission}}
+ </div>
+ <div class="picbelow1">
+ 	<img class="images1" src="{%static 'power copy.png' %}" >
+    <b>BHP</b></br>
+ 	{{car.power}}
+ </div>
+ <div class="picbelow1">
+ 	<img class="images1" src="{%static 'seat.png' %}" ><b>Seats</b></br>
+ 	{{car.seats}}
+ </div>
+ 	<div class="picbelow1">
+ 		<img class="images1" src="{%static 'fuel.png' %}" >
+ 		<b>Fuel Type</b></br>
+ 	{{car.EngineType}}
+ </div>
+ </div>
+        <div class="detailfeature">
+<div class="details"><b>Suzuki Alto Detail</b><hr>
+    <p>
+       {{car.carintro|safe}}
+    </p>
+
+<h5>Exterior</h5><hr>
+    <p>{{car.carexterior|safe}}</p>
+<h5>Interior</h5><hr>
+<p>{{car.carinterior|safe}}
+</p>
+    <h5>Engine</h5><hr>
+<p>{{car.carengine|safe}}
+</p>
+    <h5>Mileage</h5><hr>
+<p>{{car.carmileage|safe}}
+</p>
+    <h5>Competitors</h5><hr>
+<p>{{car.carcompetitor|safe}}
+</p>
+</div>
+ <div class="Features">
+ 	<table>
+ 		<tr>
+    <th colspan="2">{{car.carname}} {{car.carvariant}} Features</th>
+  </tr>
+  <tr>
+    <td>Airbags</td>
+    <td>{{car.Airbags|safe}}</td>
+  </tr>
+  <tr>
+    <td>ABS</td>
+    <td>&#9989;</td>
+
+  </tr>
+  <tr>
+    <td>Alloy Wheels</td>
+    <td>&#9989;</td>
+
+  </tr>
+  <tr>
+    <td>A/C</td>
+    <td>&#9989;</td>
+  </tr>
+  <tr>
+    <td>LCD Screen</td>
+    <td>&#10060;</td>
+  </tr>
+  <tr>
+    <td>FogLights</td>
+    <td>&#10060;</td>
+  </tr>
+  <tr>
+    <td>Power Steering</td>
+    <td>&#10060;</td>
+  </tr>
+  <tr>
+    <td>Power Windows</td>
+    <td>&#10060;</td>
+  </tr>
+  <tr>
+    <td>Keyless Entry</td>
+    <td>&#10060;</td>
+  </tr>
+  <tr>
+    <td>DVD Player</td>
+    <td>&#10060;</td>
+  </tr>
+ 	</table>
+ </div></div></div>
+{% endblock %}
+</body>
+</html>

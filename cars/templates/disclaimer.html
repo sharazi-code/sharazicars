@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    {% extends "head.html" %}
+      {% load static %}
+    <style>{% block css %}
+        .fullblock{
+        width:800px;
+        margin-left:200px;
+        }
+         @media (max-width: 992px)
+          {
+          .fullblock{
+        width:99%;
+        margin-top:100px;
+        margin-left:0px;
+        }}
+        {% endblock %}
+    </style>
+</head>
+<body>{% block body %}<div class="fullblock">
+<h2>Disclaimer !
+</h2>
+    <p>SharaziCars is an online information service, the presence of which via the domain name http://sharazicars.pk/ has taken, and will continue to take care in the development, preparation and maintenance of the content for this blog.</p><p>
+
+SharaziCars will use its reasonable endeavors to ensure only accurate information is posted on its website. However, SharaziCars does not guarantee or warrant the accuracy or reliability of any information, content or materials published on this blog. SharaziCars shall not be liable for any losses as a result of reliance on the information provided. The content of this blog may be changed at any time without notice.</p></div>{% endblock %}</body>
+</html>

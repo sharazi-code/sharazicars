@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% extends "head.html" %}
+    <meta charset="UTF-8">
+    <title>{% block title %}All Latest Car News{% endblock %}</title>
+    <style>{% block css %}
+        .top{
+        margin:30px;
+        margin-left:100px;
+        width:1100px;
+         min-height:xxx;
+        padding:5px;
+        }
+        .news1{
+        float:left;
+        object-fit: cover;
+        width:500px;
+        height:500px;
+        margin:5px;
+        }
+        .news2{
+        object-fit: cover;
+        float:left;
+        width:250px;
+        height:250px;
+        margin:5px;
+        }
+        .news3{
+        object-fit: cover;
+        float:left;
+
+        width:250px;
+        height:250px;
+        margin:5px;
+        }
+        .news4{
+        object-fit: cover;
+        float:left;
+        width:250px;
+        height:250px;
+        margin:5px;
+        }
+        .news5{
+        object-fit: cover;
+        float:left;
+        width:250px;
+        height:250px;
+        margin:5px;
+        }
+        .crop {
+        width: 250px; /* width of container */
+        height: 250px; /* height of container */
+        object-fit: cover;
+
+        }
+        .crop1 {
+        width: 500px; /* width of container */
+        height: 500px; /* height of container */
+        object-fit: cover;
+
+        }
+        .text{
+        margin-top:-100px;
+        font-size:30px;
+        max-height:80px;
+	    overflow: hidden;
+        padding:4px;
+        text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+        }
+        a{
+        color:white;
+        text-decoration:none;
+        }
+        .newscrop {
+        width: 250px; /* width of container */
+        height: 200px; /* height of container */
+        object-fit: cover;
+        }
+        .newsimg{
+        float:left;
+        }
+        .news{
+        margin-top:10px;
+        margin-left:100px;
+        width:800px;
+        font-size:30px;
+        font-weight:bold;
+        }
+        .newstext{
+        max-height:90px;
+	    overflow: hidden;
+	    font-size:30px;
+        }
+        .newsdesc{
+        text-decoration:none;
+        font-size:14px;
+        color:grey;
+        margin:5px;
+        max-height:100px;
+	    overflow: hidden;
+        padding:4px;
+        }
+        .newses{
+        width:800px;
+        height:220px;
+        }
+        .newses a{
+        font-size:20px;
+        color:black;
+        font-family:Sans-serif;
+        }
+         @media (max-width: 992px)
+          {
+          .top{
+        margin-top:100px;
+        margin-left:0px;
+        width:98%;
+        min-height:xxx;
+        padding:5px;
+        }
+        .news1{
+        float:none;
+        object-fit: cover;
+        width:100%;
+        height:200px;
+        margin:5px;
+        }
+        .news2{
+        float:none;
+        object-fit: cover;
+        width:100%;
+        height:200px;
+        margin:5px;
+        }
+        .news3{
+        float:none;
+        object-fit: cover;
+        width:100%;
+        height:200px;
+        margin:5px;
+        }
+        .news4{
+        float:none;
+        object-fit: cover;
+        width:100%;
+        height:200px;
+        margin:5px;
+        }
+        .news5{
+        float:none;
+        object-fit: cover;
+        width:100%;
+        height:200px;
+        margin:5px;
+        }
+        .crop {
+        width: 100%; /* width of container */
+        height: 200px; /* height of container */
+        object-fit: cover;
+
+        }
+        .crop1 {
+        width: 100%; /* width of container */
+        height: 200px;
+        object-fit: cover;
+
+        }
+        .text{
+        margin-top:-30px;
+        font-size:15px;
+        max-height:80px;
+	    overflow: hidden;
+        padding:4px;
+        text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+        }
+        a{
+        color:white;
+        text-decoration:none;
+        }
+        .newscrop {
+        width: 90%; /* width of container */
+        height: 200px; /* height of container */
+        object-fit: cover;
+        }
+        .newsimg{
+        float:none;
+        }
+        .news{
+        margin-top:10px;
+        margin-left:0px;
+        width:97%;
+        font-size:15px;
+        font-weight:bold;
+        min-height:xxx;
+        }
+        .newstext{
+        max-height:90px;
+	    overflow: hidden;
+	    font-size:15px;
+        }
+        .newsdesc{
+        text-decoration:none;
+        font-size:8px;
+        color:grey;
+        margin:5px;
+        max-height:100px;
+	    overflow: hidden;
+        padding:4px;
+        }
+        .newses{
+        width:100%;
+        height:220px;
+        }
+        .newses a{
+        font-size:10px;
+        color:black;
+        font-family:Sans-serif;
+        }
+          }
+        {% endblock %}
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="top">
+    {% load static %}
+    <div class="news1"><a href="http://127.0.0.1:8000/ali/post/{{allposts.0.slug}}"> <img class="crop1" src="/media/{{allposts.0.mainimage}}" />
+    <div class="text">{{allposts.0.title}}</div></a> </div>
+    <div class="news2"><a href="http://127.0.0.1:8000/ali/post/{{allposts.1.slug}}"><img class="crop" src="/media/{{allposts.1.mainimage}}" />
+        <div class="text">{{allposts.1.title}} </div></a></div>
+    <div class="news3"><a href="http://127.0.0.1:8000/ali/post/{{allposts.2.slug}}"><img class="crop" src="/media/{{allposts.2.mainimage}}" />
+        <div class="text">{{allposts.2.title}}</div></a></div>
+    <div class="news4"><a href="#"><img class="crop" src="/media/{{allposts.3.mainimage}}" />
+        <div class="text">{{allposts.3.title}}</div></a></div>
+    <div class="news5"><a href="#"><img class="crop" src="/media/{{allposts.4.mainimage}}" />
+        <div class="text">{{allposts.4.title}} </div></a></div>
+</div>
+<div class="news">
+    All Latest News And Opinions <hr/>
+    {% for i in allposts %}
+
+    <div class="newses"><a href="http://127.0.0.1:8000/ali/post/{{i.slug}}">
+        <div class="newsimg">
+            <img class="newscrop" src="/media/{{i.mainimage}}" /></div>
+        <div class="newstext">{{i.title}}</div>
+        <div class="newsdesc">{{i.postdesc}}</div></a>
+    </div>
+
+{% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}
+</body>
+</html>

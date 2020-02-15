@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="icon" href="{%static 'socialicon/web-logo.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function() {
+             $('.toggle').click(function(){
+                $('ul').toggleClass('active');
+             })
+         })
+     </script>
+    <style>{% block css %}{% endblock %}
+    body{
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+    }
+    section{
+        display:block;
+        position: relative;
+        width: 100%;
+        height: 90px;
+        background-color: black;
+    }
+    header{
+        padding: 0 80px;
+        width: 100%;
+        height: 60px;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+    .leftside{
+        float:left;
+        width:200px;
+        height:100px;
+    }
+   nav ul
+     {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    float: right;
+    }
+
+    nav ul li
+    {
+    list-style: none;
+    border-right: 1px solid white;
+    position:relative;
+    display:block;
+
+   }
+   nav ul li:last-child
+    {
+    border-right: none;
+
+   }
+
+   nav ul li a
+   {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 5px;
+    margin: 25px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .5s;
+   }
+  nav ul li:hover
+  {
+
+    color:black;
+  }
+  nav ul li a:hover
+  {
+    color:yellow;
+  }
+
+   .toggle{
+    display: none;
+    position: absolute;
+    right: 1px;
+    padding: 5px;
+    top:10px;
+   }
+   .fullfoot{
+
+            float:none;
+			width: 100%;
+			background-color: black;
+			color: white;
+			height: 200px;
+		}
+		.foot1{
+			margin-left: 100px;
+			width: 200px;
+			float: left;
+			display: block;
+		}
+		.foot1 ul li {
+			padding-top: 15px;
+		}
+		.foot1 ul li a{
+			text-decoration: none;
+			color: #E2E1E1;
+		}
+		.foot2{
+			width: 200px;
+			float: left;
+			display: block;
+		}
+		.foot2 ul li {
+			padding-top: 15px;
+		}
+		.foot2 ul li a{
+			text-decoration: none;
+			color: #E2E1E1;
+		}
+		.foot3{
+			background-color:black;
+			float: left;
+			display: block;
+		}
+		.foot3 ul li {
+			padding-top: 15px;
+		}
+		.foot3 ul li a{
+			padding-top: 15px;
+			text-decoration: none;
+			color: #E2E1E1;
+		}
+		.rightside{
+			float: right;
+			margin-right: 200px;
+			margin-top: 40px;
+		}
+   @media (max-width: 992px)
+   {
+    .leftside{
+
+        width:200px;
+        height:70px;
+    }
+    .toggle{
+    display: block;
+      }
+      section{
+         top:0px;
+         position:fixed;
+         height: 70px;
+         }
+         header{
+
+         padding: 0 0;
+
+    }
+    nav ul
+     {
+        width: 100%;
+        margin: 0px;
+        display: none;
+        position: relative;
+    }
+
+    nav ul.active
+     {
+        display: block;
+    }
+    nav ul li {
+      border-bottom: 1px solid white;
+    }
+    nav ul li a
+   {
+    color: white;
+    text-align: center;
+    margin: 0px;
+    background-color: black;
+
+   }
+    .foot1{
+   				margin-left: 0;
+   				width: 100%;
+   			}
+   			.foot2{
+   				width: 100%;
+   			}
+   			.foot3{
+   				width: 100%;
+   			}
+   			.fullfoot{
+   				height: 600px;
+   			}
+   			.rightside{
+			float: none;
+			margin-right:0px;
+			margin-top: 40px;
+		}
+   }
+
+</style>
+</head>
+<body>
+
+    <section>
+    <header>
+  <div class="leftside"><a href="https://sharazicars.pk/"><img src="{%static 'socialicon/web-logo.png' %}" class="profile" width="220px" height="70px"></a>
+  <a class="toggle"><img src="{%static 'socialicon/menu.svg' %}" class="profile" width="50px" height="45px"></a>
+  </div>
+  <nav>
+    <ul class="">
+        <li><a href="http://sharazicars.pk/"><b>New Cars</b></a></li>
+        <li><a href="/cars/blog"><b>Blog/News</b></a></li>
+        <li><a href="/cars/videos"><b>Videos</b></a></li>
+
+    </ul>
+    </nav>
+</header>
+</section>
+    {% block body %}
+{% endblock %}
+<div class="fullfoot">
+		<div class="foot1">
+			<ul>
+        <li><a href="http://sharazicars.pk/">New Cars</a></li>
+        <li><a href="/cars/blog">Blog/News</a></li>
+        <li><a href="/cars/videos">Videos</a></li>
+
+    </ul>
+		</div>
+		<div class="foot2">
+			<ul >
+        <li><a href="/cars/about">About</a></li>
+        <li><a href="/cars/disclaimer">Disclaimer</a></li>
+        <li><a href="/cars/policy">Privacy Policy</a></li>
+
+    </ul>
+
+		</div >
+		<div class="foot3">
+			<ul >
+        <li><a href="/cars/companyname?cars=Suzuki&submit=Search">Suzuki Car Prices</a></li>
+        <li><a href="/cars/companyname?cars=Toyota&submit=Search">Toyota Car Prices</a></li>
+        <li><a href="/cars/companyname?cars=Honda&submit=Search">Honda Car Prices</a></li>
+
+    </ul>
+    </div>
+    <div class="rightside"><a href="http://sharazicars.pk/"><img src="{%static 'socialicon/web-logo.png' %}" class="profilebelow" width="250px" height="80px" ></a>
+  </div>
+
+	</div>
+
+</body>
+
+</html>

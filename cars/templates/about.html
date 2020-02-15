@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    {% extends "head.html" %}
+      {% load static %}
+    <style>{% block css %}
+        .fullblock{
+        width:800px;
+        margin-left:200px;
+        }
+         @media (max-width: 992px)
+          {
+          .fullblock{
+        width:99%;
+        margin-top:100px;
+        margin-left:0px;
+        }
+        }
+        {% endblock %}
+    </style>
+</head>
+<body>{% block body %}<div class="fullblock">
+<h2>Contact Us !
+</h2>
+    <p>SharaziCars strives to give its readers the most interesting & informative automobile related material on the internet. We value the suggestions & inputs from our readers in order to make this blog more & more engaging. Should you want to get in touch with any queries, comments, suggestions please feel free to send us an email at <b>sherazaslam63@gmail.com</b></p></div>{% endblock %}</body>
+</html>

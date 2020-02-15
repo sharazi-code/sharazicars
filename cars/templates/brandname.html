@@ -1,0 +1,137 @@
+<html>
+  <head>
+      {% extends "head.html" %}
+      {% load static %}
+      <title>{% block title %}Search New Car{% endblock %}</title>
+    <style >{% block css %}
+      .newsimg{
+        float:left;
+        }
+        .news{
+        margin-top:10px;
+        margin-left:100px;
+        width:900px;
+        font-size:30px;
+        font-weight:bold;
+        }
+        .newscrop{
+        object-fit: cover;
+        width:250px;
+        height:200px;
+        }
+        .newsimage{
+        width:200px;
+        height:200px;
+        }
+        .newstext{
+        padding:5px;
+        max-height:90px;
+	    overflow: hidden;
+	    font-size:30px;
+        }
+        .newsdesc{
+        padding:5px;
+        font-size:14px;
+        color:red;
+        margin:5px;
+        max-height:100px;
+	    overflow: hidden;
+        padding:4px;
+        }
+        .newses{
+        width:800px;
+        height:220px;
+        }
+        .newses a:hover{
+        color:green;
+        }
+        .newses a{
+
+        text-decoration:none;
+        font-size:20px;
+        color:black;
+        font-family:Sans-serif;
+        }
+      fieldset{
+        background-color: transparent;
+        width:100%;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+      }
+      @media (max-width: 992px)
+   {
+      .newsimg{
+        float:none;
+        }
+        .news{
+        margin-top:80px;
+        margin-left:0px;
+        width:92%;
+        font-sie:30px;
+        font-weight:bold;
+        }
+        .newscrop{
+        object-fit: cover;
+        width:95%;
+        height:180px;
+        }
+        .newsimage{
+        width:90%;
+        height:150px;
+        }
+        .newstext{
+        padding:5px;
+        max-height:90px;
+	    overflow: hidden;
+	    font-size:15px;
+        }
+        .newsdesc{
+        padding:5px;
+        font-size:10px;
+        color:red;
+        margin:5px;
+        max-height:100px;
+	    overflow: hidden;
+        padding:4px;
+        }
+        .newses{
+        width:95%;
+        height:250px;
+        }
+        .newses a:hover{
+        color:green;
+        }
+        .newses a{
+
+        text-decoration:none;
+        font-size:15px;
+        color:black;
+        font-family:Sans-serif;
+        }
+      fieldset{
+        background-color: transparent;
+        width:90%;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+      }
+   }
+
+      {% endblock %}
+    </style>
+  </head>
+  <body>{% block body %}
+    <div class="news">
+        <fieldset>
+          <legend>{{cardata.0.company}} Cars</legend>
+    {% for i in cardata %}
+    <div class="newses"><a href="http://127.0.0.1:8000/ali/car/{{i.slug}}">
+        <div class="newsimg"><img class="newscrop" src="/media/{{i.mainimage}}" /></div>
+        <div class="newstext">{{i.title}}</div>
+        <div class="newsdesc">Car Variant : {{i.carvariant}}</div></a>
+    </div>
+            {% endfor %}
+      </fieldset>
+    </div>
+  {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy</title>
+    {% extends "head.html" %}
+      {% load static %}
+    <style>{% block css %}
+        .fullblock{
+        width:800px;
+        margin-left:200px;
+        }
+        @media (max-width: 992px)
+          {
+          .fullblock{
+        width:99%;
+        margin-top:100px;
+        margin-left:0px;
+        }
+          }
+        {% endblock %}
+    </style>
+</head>
+<body>{% block body %}<div class="fullblock">
+<h2>Privacy Policy</h2>
+<p>This privacy statement discloses the privacy practices for all pages and services offered by Sharazicars.PK</p>
+
+<b>Personally Provided Information</b>
+
+<p>You do not have to give us personal information to visit Sharazicars.PK. If you choose to provide us with additional information through an e-mail message, inquiry form, comments, etc., we will only maintain the information as long as needed to respond to your question, inquiry, or to fulfill the stated purpose of the communication. Except for authorized law enforcement investigations, we do not give, share, sell or transfer any personal information to a third party.</p>
+
+<b>E-mail Newsletters</b>
+
+<p>If users wish to subscribe to our e-mail newsletters, we ask for contact information. Our newsletters are powered by SpecificFeeds. We and SpecificFeeds use information submitted by you in the same manner as we use contact information described above. Recipients of our newsletters can unsubscribe using the instructions listed at the end of the e-mail newsletter.</p>
+</div>{% endblock %}</body>
+</html>
