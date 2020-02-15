@@ -25,7 +25,7 @@ SECRET_KEY = '4)q4eb-=#ume3b@tt0=^+u-rcv6u_=4ush0x%^p%glngvy$lgo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["sharazicars.pk","www.sharazicars.pk","139.59.65.18"]
 
 
 # Application definition
