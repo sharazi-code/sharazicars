@@ -224,22 +224,22 @@
 {% block body %}
 <div class="top">
     {% load static %}
-    <div class="news1"><a href="http://127.0.0.1:8000/ali/post/{{allposts.0.slug}}"> <img class="crop1" src="/media/{{allposts.0.mainimage}}" />
+    <div class="news1"><a href="/cars/post/{{allposts.0.slug}}"> <img class="crop1" src="/media/{{allposts.0.mainimage}}" />
     <div class="text">{{allposts.0.title}}</div></a> </div>
-    <div class="news2"><a href="http://127.0.0.1:8000/ali/post/{{allposts.1.slug}}"><img class="crop" src="/media/{{allposts.1.mainimage}}" />
+    <div class="news2"><a href="/cars/post/{{allposts.1.slug}}"><img class="crop" src="/media/{{allposts.1.mainimage}}" />
         <div class="text">{{allposts.1.title}} </div></a></div>
-    <div class="news3"><a href="http://127.0.0.1:8000/ali/post/{{allposts.2.slug}}"><img class="crop" src="/media/{{allposts.2.mainimage}}" />
+    <div class="news3"><a href="/cars/post/{{allposts.2.slug}}"><img class="crop" src="/media/{{allposts.2.mainimage}}" />
         <div class="text">{{allposts.2.title}}</div></a></div>
-    <div class="news4"><a href="#"><img class="crop" src="/media/{{allposts.3.mainimage}}" />
+    <div class="news4"><a href="/cars/post/{{allposts.3.slug}}"><img class="crop" src="/media/{{allposts.3.mainimage}}" />
         <div class="text">{{allposts.3.title}}</div></a></div>
-    <div class="news5"><a href="#"><img class="crop" src="/media/{{allposts.4.mainimage}}" />
+    <div class="news5"><a href="/cars/post/{{allposts.4.slug}}"><img class="crop" src="/media/{{allposts.4.mainimage}}" />
         <div class="text">{{allposts.4.title}} </div></a></div>
 </div>
 <div class="news">
     All Latest News And Opinions <hr/>
     {% for i in allposts %}
 
-    <div class="newses"><a href="http://127.0.0.1:8000/ali/post/{{i.slug}}">
+    <div class="newses"><a href="cars/post/{{i.slug}}">
         <div class="newsimg">
             <img class="newscrop" src="/media/{{i.mainimage}}" /></div>
         <div class="newstext">{{i.title}}</div>
